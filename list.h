@@ -29,7 +29,9 @@ class List {
         Iterator<T> begin();
         Iterator<T> end();
 
-        ~List();
+        ~List(
+		clear();
+);
 };
 
 #endif
