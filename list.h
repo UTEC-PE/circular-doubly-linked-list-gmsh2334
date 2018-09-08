@@ -23,7 +23,7 @@ class List {
         	if(!start){
         		throw "Lista Vacia";
         	}else{
-        		cout<<start->data;
+        		cout<<start->data; // No estás retornando
         	}
 
         };
@@ -36,7 +36,7 @@ class List {
         		temp=start->prev;
         		cout<<temp->data;
         	}
-        	delete temp;
+        	delete temp; // Por qué borras?
         };
 
         void push_front(T value){
@@ -53,7 +53,7 @@ class List {
             }
             start = temp;
 			nodes++;
-            delete temp;
+            delete temp; // Si borras nada se va a insertar
         };
 
         void push_back(T value){
@@ -71,7 +71,7 @@ class List {
             }
             start=temp;
             nodes++;
-            delete temp;
+            delete temp; // Si borras nada se va a insertar
         };
 
         void pop_front(){
@@ -86,7 +86,7 @@ class List {
                 start = start -> next;
             }
             nodes--;
-            delete temp;
+            delete temp; // Temp no está en este contexto
         };
 
         void pop_back(){
@@ -100,7 +100,7 @@ class List {
                 start->prev=start->prev->prev;
             }
             nodes--;
-            delete temp;
+            delete temp; // Temp no está en este contexto
         };
 
         T get(int position){
@@ -117,7 +117,7 @@ class List {
 				temp=temp->next;
 				index ++;
 			}
-			delete temp;
+			delete temp; // Por qué borras el temp? Si quiero retornarlo
         };
 
         void concat(List<T> &other){
@@ -130,7 +130,7 @@ class List {
 
         bool empty(){
             if(!start){
-                throw "Lista vacia";
+                throw "Lista vacia"; // Si la lista está vacía, excepción? No, se debe retornar falso
             }else {
                 return nodes==0;
             }

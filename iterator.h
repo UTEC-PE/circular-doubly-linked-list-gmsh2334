@@ -17,21 +17,21 @@ class Iterator {
         };
          
         Iterator<T> operator=(Iterator<T> node){
-            current=current.node;
+            current=current.node;// Esto está mal, no va a compilar. Current no tiene node, current es un puntero
             return *current;
         };
         bool operator!=(Iterator<T> cmp){
             return cmp.current != current;
         };
         Iterator<T> operator++(){
-            if (current)
+            if (current) // No es necesario
             {
                 current = current -> next;
                 return *current;
             }
         };
         Iterator<T> operator--(){
-            if (current)
+            if (current) // No es necesario
             {
                 current = current -> prev;
                 return *current;
